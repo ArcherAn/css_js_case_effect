@@ -7,8 +7,7 @@
 实现的效果如下视频所示：
 
 
+[![ScreenShot](https://github.com/ArcherAn/css_js_case_effect/blob/master/sky_cloud/video.png)](https://youtu.be/XJTTfllXeA4)
 
-[https://youtu.be/XJTTfllXeA4](https://youtu.be/XJTTfllXeA4)
 
-
-[![ScreenShot](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://youtu.be/XJTTfllXeA4)
+[![ScreenShot](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](http://youtu.be/vt5fpE0bzSY)
