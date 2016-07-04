@@ -6,10 +6,9 @@
 
 实现的效果如下视频所示：
 
-<iframe 
-	height=498 width=510 
-	src="http://player.youku.com/embed/XNjcyMDU4Njg0" 
-	frameborder=0 allowfullscreen>
-</iframe>
 
-![](http://i.imgur.com/8qrqpFH.png)
+
+[https://youtu.be/XJTTfllXeA4](https://youtu.be/XJTTfllXeA4)
+
+
+[![ScreenShot](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://youtu.be/XJTTfllXeA4)
