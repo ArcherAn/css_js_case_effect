@@ -5,3 +5,10 @@
 [http://www.w3school.com.cn/css3/css3_3dtransform.asp](http://www.w3school.com.cn/css3/css3_3dtransform.asp)
 
 实现的效果如下视频所示：
+
+<iframe 
+	height=498 width=510 
+	src="http://player.youku.com/embed/XNjcyMDU4Njg0" 
+	frameborder=0 allowfullscreen>
+</iframe>
+
