@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>简单的css3动画demo</title>
+    <style>
+        span{
+            position: relative;         /* 相对定位 */
+            display: block;             /* 行内元素定义成块状元素 */
+            width: 100px;
+            height: 100px;
+            background-color: #ff5f71;
+            margin-bottom: 20px;
+            text-align: center;         /* 文本居中 */
+            border-radius: 500px;       /* 正方形变为圆形 */
+        }
+
+        /* 旋转 */
+        .rotate{
+            animation-name: spin;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-delay: 1s;
+        }
+        @-webkit-keyframes spin {
+            100%{
+                transform: rotate(1turn);    /* 旋转 */
+            }
+        }
+        /* 旋转 */
+
+        /*X轴移入*/
+        .translateX{
+            animation-name: clou;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        @-webkit-keyframes clou {
+            0%{
+                transform: translateX(700px);
+            }
+            50%{
+                transform: translateX(0);
+            }
+            100% {
+                transform:translateX(700px);
+            }
+        }
+        /*X轴移入*/
+
+        /*Y轴移入*/
+        .translateY{
+            animation-name: shop;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        @-webkit-keyframes shop {
+            0%{
+                transform: translateY(-640px);
+            }
+            50%{
+                transform: translateY(0);
+            }
+            100% {
+                transform:translateY(-640px);
+            }
+        }
+        /*Y轴移入*/
+
+        /*上下无限循环移动*/
+        .TB{
+            -webkit-animation: topBottom 2.5s ease-in-out infinite alternate;
+            -moz-animation: topBottom 2.5s ease-in-out infinite alternate;
+            -ms-animation: topBottom 2.5s ease-in-out infinite alternate;
+            -o-animation: topBottom 2.5s ease-in-out infinite alternate;
+            animation: topBottom 2.5s ease-in-out infinite alternate
+        }
+       @keyframes topBottom {
+           0% {transform:translateY(15px);}
+           50% {transform:translateY(0);}
+           100% {transform:translateY(15px);}
+       }
+        /*上下无限循环移动*/
+
+        /*围绕四周移动*/
+        .translateXY{
+            animation-name:translateXY4;
+            animation-duration:5s;
+            animation-iteration-count:infinite;
+            /*animation-play-state:paused;*/
+        }
+        @keyframes translateXY4
+        {
+            0%   {background:red; left:0px; top:0px;}
+            25%  {background:yellow; left:200px; top:0px;}
+            50%  {background:blue; left:200px; top:200px;}
+            75%  {background:green; left:0px; top:200px;}
+            100% {background:red; left:0px; top:0px;}
+        }
+        /*围绕四周移动*/
+
+        /*以X轴旋转*/
+        .translateAll{
+            animation-name:translateAllT;
+            animation-duration:5s;
+            animation-iteration-count:infinite;
+        }
+        @keyframes translateAllT{
+            0% {transform: rotateX(180deg);}
+            50% {transform: rotateX(0deg);}
+            100% {transform: rotateX(180deg);}
+        }
+        /*以X轴旋转*/
+
+        /*图片逐帧加载动画效果*/
+        #frame {
+            width: 50px;
+            height: 72px;
+            border: 1px solid transparent;
+            background: url(http://s.cdpn.io/79/sprite-steps.png) no-repeat left top;
+            animation: frame-animation 1s steps(10) infinite;
+        }
+
+        @keyframes frame-animation{
+            0% { background-position: 0px 0; }   /* background-position 设置背景图像的起始位置 */
+            100% { background-position: -500px 0; }
+        }
+        /*图片逐帧加载动画效果*/
+
+
+    </style>
+</head>
+<body>
+     <span class="rotate">123</span>
+     <span class="translateX"></span>
+     <span class="translateY"></span>
+     <span class="TB"></span>
+     <span class="translateXY"></span>
+     <span class="translateAll">123</span>
+
+     <!-- 图片逐帧加载动画效果 -->
+     <div id="animation">
+         <div id="frame"></div>
+     </div>
+     <!-- 图片逐帧加载动画效果 -->
+</body>
+</html>
