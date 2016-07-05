@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="gb2312">
+    <title>js实现的时钟</title>
+    <style type="text/css">
+        html,body{
+            height: 100%;
+            background: #ffd740;
+            position:relative;
+        }
+        #wrap{
+            width: 240px;
+            height: 240px;
+            border-radius: 120px;
+            background: cyan;
+            margin: 50px auto;
+            position: relative;
+        }
+        #time{
+            width: 240px;
+            height: 40px;
+            margin: 50px auto;
+            position: relative;
+            color: black;
+            text-align:center;
+
+        }
+        #clock{
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            background: white;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+        #bNumber{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        #bNumber div{
+            width: 190px;
+            height: 20px;
+            position: absolute;
+            left: 10px;
+            top: 90px;
+        }
+        #bNumber span{
+            display: block;
+            width: 20px;
+            height: 20px;
+        }
+        .number{
+            position:absolute;
+            bottom:90px;
+            transform-origin:50% 90%;    /* 设置旋转元素的基点位置： */
+            -webkit-transform-origin:50% 90%;
+        }
+        #hour{
+            width: 5px;
+            height: 60px;
+            left: 100px;
+            background: black;
+        }
+        #minute{
+            width: 3px;
+            height: 70px;
+            left: 101px;
+            background: gray;
+        }
+        #second{
+            width: 1px;
+            height: 80px;
+            left: 101px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+     <div id="wrap">
+         <!--指针数-->
+         <div id="clock">
+             <div id="bNumber">
+                 <div><span>9</span></div>
+                 <div><span>10</span></div>
+                 <div><span>11</span></div>
+                 <div><span>12</span></div>
+                 <div><span>1</span></div>
+                 <div><span>2</span></div>
+                 <div><span>3</span></div>
+                 <div><span>4</span></div>
+                 <div><span>5</span></div>
+                 <div><span>6</span></div>
+                 <div><span>7</span></div>
+                 <div><span>8</span></div>
+             </div>
+         <div id="hour" class="number"></div>
+         <div id="minute" class="number"></div>
+         <div id="second" class="number"></div>
+         </div>
+     </div>
+     <div id="time"></div>
+     <script type="text/javascript" >
+         var oBnumber=document.getElementById("bNumber");
+         var oDiv=oBnumber.getElementsByTagName("div");
+         var oSpan=oBnumber.getElementsByTagName("span");
+         for(var i=0;i<oDiv.length;i++){
+             oDiv[i].style.webkitTransform="rotate("+ i * 30 +"deg)";
+         }
+         for(var j=0;j<oSpan.length;j++){
+             oSpan[j].style.webkitTransform="rotate("+ j * -30 +"deg)";
+         }
+         function colorNumber(){
+             var oHour=document.getElementById("hour");
+             var oMinute=document.getElementById("minute");
+             var oSecond=document.getElementById("second");
+             var oTime=document.getElementById("time");
+
+             var nowTime=new Date();
+             var nowHour=nowTime.getHours();
+             var nowMinute=nowTime.getMinutes();
+             var nowSecond=nowTime.getSeconds();
+
+             var hourDeg=(nowMinute/60)*30;
+             var minuteDeg=(nowSecond/60)*6;
+
+             oHour.style.webkitTransform="rotate("+ (nowHour * 30+hourDeg)+ "deg)";
+             oMinute.style.webkitTransform="rotate("+ (nowMinute * 6+minuteDeg)+ "deg)";
+             oSecond.style.webkitTransform="rotate("+ (nowSecond * 6)+"deg)";
+             oTime.style.fontSize="24px";
+
+             oTime.innerHTML= "现在是"+nowHour+":"+nowMinute+":"+nowSecond;
+
+         }
+         colorNumber();
+         setInterval("colorNumber()",1000);
+     </script>
+</body>
+</html>
