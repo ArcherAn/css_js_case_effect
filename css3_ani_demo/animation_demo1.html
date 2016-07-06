@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>css3_demo1</title>
+    <style type="text/css">
+       .box{
+           width: 100%;
+           padding: 3%;
+           box-sizing: border-box;
+           overflow: hidden;
+       }
+        .box .loader{
+            width: 30%;
+            float: left;
+            height: 200px;
+            margin-right: 3%;
+            border:1px solid #ccc;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;    /* 弹性盒居中对齐 */
+            justify-content:center
+        }
+        .loading_1{
+            width: 35px;
+            height: 35px;
+            position: relative;
+        }
+        .loading_1 i{
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(transparent 0,transparent 70%,#333 30%,#333 100%);
+            -webkit-animation: loading_1 1s linear 0s infinite;
+        }
+        @-webkit-keyframes loading_1 {
+            0%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(180deg);
+            }
+            100%{
+                transform:rotate(360deg);
+            }
+        }
+        .loading_2 i{
+            display: inline-block;
+            width: 4px;
+            height: 35px;
+            border-radius: 2px;
+            margin: 0 2px;
+            background-color: #333;
+        }
+
+        .loading_2 i:nth-child(1){
+            -webkit-animation: loading_2 1s ease-in .1s infinite;
+        }
+       .loading_2 i:nth-child(2){
+           -webkit-animation: loading_2 1s ease-in .2s infinite;
+       }
+       .loading_2 i:nth-child(3){
+           -webkit-animation: loading_2 1s ease-in .3s infinite;
+       }
+       .loading_2 i:nth-child(4){
+           -webkit-animation: loading_2 1s ease-in .4s infinite;
+       }
+       .loading_2 i:nth-child(5){
+           -webkit-animation: loading_2 1s ease-in .5s infinite;
+       }
+        @-webkit-keyframes loading_2 {
+            0%{
+                transform: scaleY(1);
+            }
+            50%{
+                transform:scaleY(.4);
+            }
+            100%{
+                transform:scaleY(1);
+            }
+        }
+
+        .loading_3{
+            position: relative;
+        }
+        .loading_3 i{
+            display: block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;                             /* 圆形 */
+            background-color: #333;
+            position:absolute;
+        }
+        .loading_3 i:nth-child(1){
+            top:25px;
+            left:0;
+            -webkit-animation: loading_3 1s ease 0s infinite;
+        }
+       .loading_3 i:nth-child(2){
+           top:17px;
+           left:17px;
+           -webkit-animation: loading_3 1s ease -.12s infinite;
+       }
+       .loading_3 i:nth-child(3){
+           top:0;
+           left:25px;
+           -webkit-animation: loading_3 1s ease -.24s infinite;
+       }
+       .loading_3 i:nth-child(4){
+           top:-17px;
+           left:17px;
+           -webkit-animation: loading_3 1s ease -.36s infinite;
+       }
+        .loading_3 i:nth-child(5){
+            top:-25px;
+            left:0;
+            -webkit-animation: loading_3 1s ease -.48s infinite;
+        }
+       .loading_3 i:nth-child(6){
+           top:-17px;
+           left:-17px;
+           -webkit-animation: loading_3 1s ease -.6s infinite;
+       }
+       .loading_3 i:nth-child(7){
+           top:0;
+           left:-25px;
+           -webkit-animation: loading_3 1s ease -.72s infinite;
+       }
+       .loading_3 i:nth-child(8){
+           top:17px;
+           left:-17px;
+           -webkit-animation: loading_3 1s ease -.84s infinite;
+       }
+       @-webkit-keyframes loading_3 {
+            50%{
+                transform: scale(.4);                   /* 横向纵向同时所放 */
+                opacity: .3            /* 不透明度 */
+            }
+            100%{
+                transform: scale(1);
+                opacity: 1
+            }
+        }
+    </style>
+</head>
+<body>
+   <div class="box">
+       <div class="loader">
+           <div class="loading_1">
+               <i></i>
+           </div>
+       </div>
+       <div class="loader">
+           <div class="loading_2">
+               <i></i>
+               <i></i>
+               <i></i>
+               <i></i>
+               <i></i>
+           </div>
+       </div>
+       <div class="loader">
+           <div class="loading_3">
+               <i></i>
+               <i></i>
+               <i></i>
+               <i></i>
+               <i></i>
+               <i></i>
+               <i></i>
+               <i></i>
+           </div>
+       </div>
+   </div>
+</body>
+</html>
